@@ -18,7 +18,12 @@ QtApp::QtApp(QWidget *parent)
     ui -> tabWidget -> setCurrentIndex(0);
 
 #pragma region Load Pictures{
-    QPixmap pSerial("D:/QT Tutorial/VisualQt/QtApp/QtApplicationForm/Pictures/ComPort.png");
+
+    QDir qDir;
+    qDir.tempPath();
+//    QPixmap pSerial("D:/QT Tutorial/VisualQt/QtApp/QtApplicationForm/Pictures/ComPort.png");
+    qDebug() << qDir.currentPath() << "\n" ;
+    QPixmap pSerial(qDir.currentPath() + "/Pictures/ComPort.png");
     QPixmap pTcp("D:/QT Tutorial/VisualQt/QtApp/QtApplicationForm/Pictures/tcpip.jpg");
     QPixmap pUdp("D:/QT Tutorial/VisualQt/QtApp/QtApplicationForm/Pictures/udp.png");
     QPixmap pMultiThread("D:/QT Tutorial/VisualQt/QtApp/QtApplicationForm/Pictures/multithread.jpg");
